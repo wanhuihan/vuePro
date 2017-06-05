@@ -7,6 +7,8 @@ var VueRouter = require('vue-router');
 
 import test from './components/test.vue';
 
+import foo from './components/foo.vue';
+
 Vue.use(VueRouter);
 Vue.config.debug = true;
 // Vue.config.delimiters = ['${', '}']; // 把默认的{{ }} 改成ES6的模板字符串 ${ }
@@ -20,6 +22,10 @@ var routes = [
   {
     path: '/',
     component: test
+  },
+  {
+    path: '/foo',
+    component: foo
   }
 ]
 var router = new VueRouter({
@@ -27,7 +33,10 @@ var router = new VueRouter({
 });
 
 const app = new Vue({
-  router
+  // el: '#body',
+  router: router,
+
+  // router
 }).$mount('#app')
 // // router.map(require('./routes'));
 // router.start(App, '#app');
