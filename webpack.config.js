@@ -2,6 +2,8 @@ var webpack= require("webpack");
 
 var path = require('path');
 
+var ignoreFiles = new webpack.IgnorePlugin(/\.\/jquery-last.js$/);
+
 module.exports={
     entry: path.resolve('./src/main.js'),
     output:{
@@ -13,6 +15,7 @@ module.exports={
         loaders:[
 
             {test: /\.css$/, loader: ['css-loader']},
+            // {test: /\.scss/, loader: ['scss-loader']},
             {test: /\.vue$/, loader: ['vue-loader']},
             {test: /\.html$/, loader: ['html-loader']},
             {test: /(\.js)$/, loader:["babel-loader"] ,exclude:/node_modules/,
@@ -28,13 +31,10 @@ module.exports={
           'vue-router$': 'vue-router/dist/vue-router.common.js'
       }
     },
-    plugins:[
-         /*
-         new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-               */
-    ]
+    // vue: {
+    //     loaders: {
+    //         scss: ['vue-style-loader','css', 'sass'].join('!')
+    //     }
+    // },
+    plugins: [ignoreFiles]
 }

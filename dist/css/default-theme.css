@@ -1,0 +1,10 @@
+html, body {
+  height: 100%; }
+
+#app.container-fluid {
+  padding: 0; }
+
+.nav {
+  border-bottom: 1px solid #0275d8; }
+
+/*# sourceMappingURL=default-theme.css.map */
