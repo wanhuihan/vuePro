@@ -14,7 +14,7 @@ module.exports={
     module:{
         loaders:[
 
-            {test: /\.css$/, loader: ['css-loader']},
+            // {test: /\.css$/, loader: ['css-loader']},
             // {test: /\.scss/, loader: ['scss-loader']},
             {test: /\.vue$/, loader: ['vue-loader']},
             {test: /\.html$/, loader: ['html-loader']},
